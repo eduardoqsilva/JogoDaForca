@@ -27,10 +27,10 @@ let predefined = {
 }
 
 function choice(){
-     console.log('CHAMOU!')
+    
      wordTip = add()
      text = att()
-     console.log(wordTip)
+    
      letersTraceAndTip(wordTip)
 }
 function add(){
@@ -40,7 +40,7 @@ function add(){
         alternativeTip = ''
         alternativeWord = ''
     }
-    console.log('dica ' + alternativeTip + ' palavra ' + alternativeWord)
+    
     if(alternativeTip != '' && alternativeWord != ''){
 
         alternativeWord.trim()
@@ -59,7 +59,6 @@ function add(){
     }
     else{
         let w = wordMistery(predefined)
-        console.log('isso devia acontecer')
         return w
     }
 }
@@ -85,7 +84,7 @@ function wordMistery(obj){
     let word = obj.words[theme][index]
     let tip = obj.tips[theme][0]
  
-    // console.log('A dica é: ' + tip + ' A palavra é: ' + word)  
+    
     return  [tip, word]
 }
 function letersTraceAndTip(wordAndTip){
@@ -108,7 +107,7 @@ function letersTraceAndTip(wordAndTip){
             traces.innerHTML += '<div class="space"></div>';
         }
     }
-    // console.log(word)
+   
     
 }
 function clear(){
@@ -146,7 +145,7 @@ function keybord(key){
         wordAsci = wordAsci.split(' ').join('')
         word = word.split('-').join('')
         word = word.split(' ').join('')
-        // console.log(word + " <-")
+        
         if(keyString == 'ç'){
             keyString = 'c'
         }
@@ -154,14 +153,13 @@ function keybord(key){
         if(!isNumeric(keyString) && !containsSpecialChars(keyString)){
             
             if(word.includes(`${keyString}`)){
-                // console.log(leters)
+                
                 for(i = 0; i < word.length; i++){
                     if(word[i] == keyString){
                         
                         leters[i].innerHTML = wordAsci[i]
                         
                         text = text.split(word[i]).join('')
-                        console.log(text)
                         
                         if(text == '' && errors < 6){
                             endGame(false, wordTip[1])
@@ -172,8 +170,7 @@ function keybord(key){
                 
                 errors++
                 if(errors <= 6){
-                    img.style.backgroundImage = `url('src/images/forca/forca${errors}.svg')`
-                    // console.log(`/src/images/forca/forca${errors}.svg`)
+                    img.style.backgroundImage = `url('src/images/forca/forca${errors}.svg')`  
                 }
                 if(errors == 6){
                     endGame(true, wordTip[1])
@@ -185,14 +182,12 @@ function keybord(key){
 }
 function endGame(bollean, word){
     if(bollean){
-        console.log('perdeu')
         res.classList.toggle('hidden')
         res.classList.add('lose')
         response.innerHTML = 'Você Foi Enforcado!'
         wordRes.innerHTML = `A palavra era: <a href="https://pt.wikipedia.org/wiki/${word}">${word}</a>`
 
     }else{
-        console.log('ganhou')
         res.classList.toggle('hidden')
         wordRes.innerHTML = `A palavra era: <a href="https://pt.wikipedia.org/wiki/${word}">${word}</a>`
     }
