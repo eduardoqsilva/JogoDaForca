@@ -176,7 +176,8 @@ function keybord(key){
                 
                 errors++
                 if(errors <= 6){
-                    img.style.backgroundImage = `url('/src/images/forca/forca${errors}.svg')`
+                    img.style.backgroundImage = `url('../images/forca/forca${errors}.svg')`
+                    //(forca.svg);
                     // console.log(`/src/images/forca/forca${errors}.svg`)
                 }
                 if(errors == 6){
