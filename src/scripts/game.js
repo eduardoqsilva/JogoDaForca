@@ -65,11 +65,7 @@ function add(){
 }
 //retona a palavra e a dica de um obj com 2 arrays words, tips
 function freeKeybord(){
-    if(free == true){
-        free = false
-    }else{
-        free = true
-    }
+    free = !free
 }
 function wordMistery(obj){
     
@@ -186,11 +182,6 @@ function keybord(key){
         }
 
     }  
-}
-function errorCount(err){
-    
-    // console.log(errors)
-    console.log("url('/src/images/forca/forca" + err + ".svg'")
 }
 function endGame(bollean, word){
     if(bollean){
