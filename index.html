@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/style.css">
+    <title>Forca zen</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="contant">
+            <h2 id="tipText"></h2>
+            <div class="imgF">
+            </div>
+            <div class="wordMistery">
+                <!-- <div class="trace"></div> -->
+            </div>
+
+            <div class="res-flex hidden">
+                <h1 id="res">Você Acertou!</h1>
+                <p id="word-res">A palavra era</p>
+
+                <button id="play-again" class="button" onclick="reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="OnOff hidden">
+
+    </div>
+    <div class="musicName hidden">
+        <img src="src/images/icons/note.png" alt="nota-musical">
+        <h3>Music: piano-monent</h3>
+    </div>
+    <div onclick="freeKeybord()" class="add button">
+        <img src="src/images/icons/add.png" alt="adicionar">
+    </div>
+    <div class="hidden adc-container">
+        <div class="adc-flex">
+                <div>
+                    <input autocomplete="off" placeholder="palavra" type="text" name="palavra" id="word">
+                    <input autocomplete="off" placeholder="dica" type="text" name="dica" id="tip">
+                    <div>
+                        <button onclick="reload()" class="button" id="cancel-add">Cancelar</button>
+                        <button onclick="choice()" class="button" id="add-word">Adicionar</button>
+                        <button  onclick="openAndCloseAdd(), freeKeybord()" class="button" id="finish-add">Fechar</button>
+                    </div>
+                </div>
+                
+        </div>
+    </div>
+    <script src="/src/scripts/interface.js"></script>
+    <script src="src/scripts/game.js"></script>
+</body>
+</html>
